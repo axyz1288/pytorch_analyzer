@@ -46,15 +46,15 @@ Information include **layer memory usage, max memory usage, cumulative memory us
 
 * Every layer memory usage
 
-![png](layer.png)
+![png](/img/layer.png)
 
 * Total memory usage (cumulative memory usage)
 
-![png](cumulative.png)
+![png](/img/cumulative.png)
 
 * Every layer execution time
 
-![png](exec_time.png)
+![png](/img/exec_time.png)
 
 # How to use
 
