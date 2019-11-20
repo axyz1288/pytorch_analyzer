@@ -70,20 +70,13 @@ from pytorch_analyzer import Pytorch_Analyzer
 analyzer = Pytorch_Analyzer(Your_model)
 ```
 
-3. Before training/inference, please **initialize analyzer.**
-
-``` python
-analyzer.initial()
-outputs = Your_model(inputs)
-```
-
-4. Print the analysis.
+3. Print the analysis.
 
 ``` python
 analyzer.analysis()
 ```
 
-5. Plot the analysis
+4. Plot the analysis
 
 ``` python
 analyzer.analysis_plot()
