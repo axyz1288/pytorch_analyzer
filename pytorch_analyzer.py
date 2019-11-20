@@ -28,6 +28,8 @@ class Pytorch_Analyzer(object):
     def net(self, _net):
         for module in _net.children():
             for layer in module.children():
+                if(self._num_layer == 0):
+                    self._hooks.append(layer.register_forward_pre_hook(self.initial))
                 self._hooks.append(layer.register_forward_hook(self.layer))
                 self._num_layer += 1
     
@@ -51,7 +53,7 @@ class Pytorch_Analyzer(object):
         cuda.reset_max_memory_allocated()
         self._timestamp = time.time()
 
-    def initial(self):
+    def initial(self, _net, input):
         if(self._count == self._num_layer * self._iter):
             self.exec_time.append((time.time() - self._timestamp) * 1000000)
             self.memory.append(abs(cuda.memory_allocated() / 1024. / 1024.))
